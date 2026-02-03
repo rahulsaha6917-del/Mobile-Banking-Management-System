@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Banking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Login Section -->
+    <div class="card" id="loginCard">
+        <h2>Mobile Banking Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+
+        <p class="link" onclick="showRegister()">New User? Register</p>
+    <p class="link" onclick="showForgot()">Forgot Password?</p>
+    </div>
+
+    <div class="card hidden" id="registerCard">
+    <h2>User Registration</h2>
+
+    <input type="text" id="regUser" placeholder="Create Username">
+    <input type="password" id="regPass" placeholder="Create Password">
+
+    <button onclick="register()">Register</button>
+    <p class="link" onclick="backToLogin()">Back to Login</p>
+</div>
+
+<!-- Forgot Password -->
+<div class="card hidden" id="forgotCard">
+    <h2>Forgot Password</h2>
+
+    <input type="text" id="forgotUser" placeholder="Enter Username">
+    <input type="password" id="newPass" placeholder="New Password">
+
+    <button onclick="resetPassword()">Reset Password</button>
+    <p class="link" onclick="backToLogin()">Back to Login</p>
+</div>
+    <!-- Dashboard Section -->
+    <div class="card hidden" id="dashboard">
+        <h2>Welcome User</h2>
+
+        
+        <div class="balance">₹ <span id="balance">0</span></div>
+
+        <input type="number" id="amount" placeholder="Enter amount">
+
+        <button onclick="deposit()">Deposit</button>
+        <button onclick="withdraw()">Withdraw</button>
+        <button onclick="history()">Transaction History</button>
+        <button onclick="clearHistory()" class="clear-btn">
+    Clear Transaction History
+</button>
+<button class="logout-btn" onclick="logout()">Logout</button>
+        
+       <h3>Transaction History</h3>
+<div class="history">
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Date & Time</th>
+            </tr>
+        </thead>
+        <tbody id="history"></tbody>
+    </table>
+</div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
